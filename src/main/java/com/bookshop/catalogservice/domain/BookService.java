@@ -23,7 +23,7 @@ public class BookService {
     }
 
     public Book addBookToCatalog(Book book) {
-        if (bookRepository.existByIsbn(book.isbn())) {
+        if (bookRepository.existsByIsbn(book.isbn())) {
             throw new BookAlreadyExistException(book.isbn());
         }
         return bookRepository.save(book);
@@ -35,7 +35,14 @@ public class BookService {
 
     public Book editBookDetails(String isbn, Book book) {
         Function<Book, Book> updateExistingBook = oldBook -> {
-            var newBook = new Book(oldBook.isbn(), book.title(), book.author(), book.price());
+            var newBook = new Book(oldBook.id(),
+                    oldBook.isbn(),
+                    book.title(),
+                    book.author(),
+                    book.price(),
+                    oldBook.createdDate(),
+                    oldBook.lastModifiedDate(),
+                    oldBook.version());
             return bookRepository.save(newBook);
         };
 
