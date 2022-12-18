@@ -58,7 +58,7 @@ jobs:
           java-version: 17
           cache: maven
       - name: Build container image
-        runs: |
+        run: |
           chmod +x mvnw
           ./mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }} -Dspring-boot.build-image.publish=true
       - name: OCI image vulnerability scanning
