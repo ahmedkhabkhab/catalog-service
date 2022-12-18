@@ -119,6 +119,14 @@
 						</goals>
 					</execution>
 				</executions>
+				<configuration>
+					<image>
+						<name>${project.name}</name>
+						<env>
+							<BP_JVM_VERSION>17.*</BP_JVM_VERSION>
+						</env>
+					</image>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
