@@ -17,6 +17,9 @@
 		<java.version>17</java.version>
 		<spring.cloud-version>2021.0.3</spring.cloud-version>
 		<testcontainer-version>1.17.6</testcontainer-version>
+		<registryUsername>ahmedkhabkhab</registryUsername>
+		<registryToken>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</registryToken>
+		<registryUrl>ghcr.io</registryUrl>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -121,11 +124,17 @@
 				</executions>
 				<configuration>
 					<image>
-						<name>${project.name}</name>
-						<env>
-							<BP_JVM_VERSION>17.*</BP_JVM_VERSION>
-						</env>
+						<name>ghcr.io/ahmedkhabkhab/${project.name}</name>
+						<env><BP_JVM_VERSION>17.*</BP_JVM_VERSION></env>
+						<publish>true</publish>
 					</image>
+					<docker>
+						<publishRegistry>
+							<url>${registryUrl}</url>
+							<username>${registryUsername}</username>
+							<password>${registryToken}</password>
+						</publishRegistry>
+					</docker>
 				</configuration>
 			</plugin>
 		</plugins>
