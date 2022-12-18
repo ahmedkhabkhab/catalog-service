@@ -26,6 +26,7 @@ public class BookDataLoader {
         var book2 = Book.of("2", "Title 2", "Author 2", 20.0);
         var book3 = Book.of("3", "Title 3", "Author 3", 30.0);
         var book4 = Book.of("4", "Title 4", "Author 4", 40.0);
-        bookRepository.saveAll(List.of(book1, book2, book3, book4));
+        var book5 = Book.of("5", "Title 5", "Author 5", 50.0);
+        bookRepository.saveAll(List.of(book1, book2, book3, book4, book5));
     }
 }
