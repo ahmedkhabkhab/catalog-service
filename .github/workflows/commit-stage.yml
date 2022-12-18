@@ -34,3 +34,7 @@ jobs:
         run: |
           chmod +x mvnw
           ./mvnw verify
+        env:
+          REGISTRY_USERNAME: ahmedkhabkhab
+          REGISTRY_TOKEN: ${{ github.token }}
+          REGISTRY_URL: ghcr.io

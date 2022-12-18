@@ -17,9 +17,9 @@
 		<java.version>17</java.version>
 		<spring.cloud-version>2021.0.3</spring.cloud-version>
 		<testcontainer-version>1.17.6</testcontainer-version>
-		<registryUsername/>
-		<registryToken/>
-		<registryUrl/>
+		<registry.username/>
+		<registry.token/>
+		<registry.url/>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -130,9 +130,9 @@
 					</image>
 					<docker>
 						<publishRegistry>
-							<url>${registryUrl}</url>
-							<username>${registryUsername}</username>
-							<password>${registryToken}</password>
+							<url>${registry.url}</url>
+							<username>${registry.username}</username>
+							<password>${registry.token}</password>
 						</publishRegistry>
 					</docker>
 				</configuration>
