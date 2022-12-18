@@ -36,5 +36,5 @@ jobs:
           ./mvnw verify
         env:
           REGISTRY_USERNAME: ahmedkhabkhab
-          REGISTRY_TOKEN: ${{ github.token }}
+          REGISTRY_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           REGISTRY_URL: ghcr.io
