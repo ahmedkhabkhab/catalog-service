@@ -128,13 +128,6 @@
 						<env><BP_JVM_VERSION>17.*</BP_JVM_VERSION></env>
 						<publish>true</publish>
 					</image>
-					<docker>
-						<publishRegistry>
-							<url>${registry.url}</url>
-							<username>${registry.username}</username>
-							<password>${registry.token}</password>
-						</publishRegistry>
-					</docker>
 				</configuration>
 			</plugin>
 		</plugins>
