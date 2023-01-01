@@ -123,10 +123,10 @@
 					</execution>
 				</executions>
 				<configuration>
-					<image>
-						<name>ghcr.io/ahmedkhabkhab/${project.name}</name>
-						<env><BP_JVM_VERSION>17.*</BP_JVM_VERSION></env>
-					</image>
+					<imageName>${project.name}</imageName>
+						<environmentVariables>
+							<BP_JVM_VERSION>17.*</BP_JVM_VERSION>
+						</environmentVariables>
 					<docker>
 						<publishRegistry>
 							<url>${registry.url}</url>
