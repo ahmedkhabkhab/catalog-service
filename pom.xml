@@ -17,6 +17,7 @@
 		<java.version>17</java.version>
 		<spring.cloud-version>2021.0.3</spring.cloud-version>
 		<testcontainer-version>1.17.6</testcontainer-version>
+		<testkeycloak-version>2.5.0</testkeycloak-version>
 		<registry.username/>
 		<registry.token/>
 		<registry.url/>
@@ -96,6 +97,13 @@
 			<groupId>org.testcontainers</groupId>
 			<artifactId>junit-jupiter</artifactId>
 			<version>${testcontainer-version}</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.github.dasniko/testcontainers-keycloak -->
+		<dependency>
+			<groupId>com.github.dasniko</groupId>
+			<artifactId>testcontainers-keycloak</artifactId>
+			<version>${testkeycloak-version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
