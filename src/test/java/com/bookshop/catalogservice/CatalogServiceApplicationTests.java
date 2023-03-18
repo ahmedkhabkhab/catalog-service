@@ -55,7 +55,7 @@ class CatalogServiceApplicationTests {
 
 	@Test
 	public void whenPostRequestThenBookCreated() {
-		var expectedBook = Book.of("123", "Title", "Author", 10.00);
+		var expectedBook = Book.of("123", "Title", "Author", 10.00, "publisher");
 		webTestClient
 				.post()
 				.uri("/books")
@@ -72,7 +72,7 @@ class CatalogServiceApplicationTests {
 
 	@Test
 	public void whenPostRequestUnauthroizedThen403() {
-		var expectedBook = Book.of("123", "Title", "Author", 10.00);
+		var expectedBook = Book.of("123", "Title", "Author", 10.00, "publisher");
 		webTestClient
 				.post()
 				.uri("/books")
@@ -85,7 +85,7 @@ class CatalogServiceApplicationTests {
 
 	@Test
 	public void whenPostRequestUnauthenticatedThen401() {
-		var expectedBook = Book.of("123", "Title", "Author", 10.00);
+		var expectedBook = Book.of("123", "Title", "Author", 10.00, "publisher");
 		webTestClient
 				.post()
 				.uri("/books")

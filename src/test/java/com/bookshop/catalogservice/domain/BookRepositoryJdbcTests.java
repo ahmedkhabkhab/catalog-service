@@ -1,4 +1,4 @@
-package com.bookshop.catalogservice;
+package com.bookshop.catalogservice.domain;
 
 import com.bookshop.catalogservice.config.DataConfig;
 import com.bookshop.catalogservice.domain.Book;
@@ -28,9 +28,8 @@ public class BookRepositoryJdbcTests {
 
     @Test
     public void findBookByIsbnWhenExisting() {
-        var bookIsbn = "123";
-        var book = Book.of(bookIsbn, "Title", "Author", 10.0);
-
+        var bookIsbn = "1234561237";
+        var book = Book.of(bookIsbn, "Title", "Author", 12.90, "Polarsophia");
         jdbcAggregateTemplate.insert(book);
 
         Optional<Book> actualBook = bookRepository.findByIsbn(bookIsbn);

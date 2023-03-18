@@ -1,4 +1,4 @@
-package com.bookshop.catalogservice;
+package com.bookshop.catalogservice.web;
 
 import com.bookshop.catalogservice.config.SecurityConfig;
 import com.bookshop.catalogservice.domain.BookNotFoundException;

@@ -34,17 +34,18 @@ public class BookService {
     }
 
     public Book editBookDetails(String isbn, Book book) {
-        Function<Book, Book> updateExistingBook = oldBook -> {
-            var newBook = new Book(oldBook.id(),
-                    oldBook.isbn(),
+        Function<Book, Book> updateExistingBook = existingBook -> {
+            var newBook = new Book(existingBook.id(),
+                    existingBook.isbn(),
                     book.title(),
                     book.author(),
                     book.price(),
-                    oldBook.createdDate(),
-                    oldBook.lastModifiedDate(),
-                    oldBook.createdBy(),
-                    oldBook.lastModifiedBy(),
-                    oldBook.version());
+                    book.publisher(),
+                    existingBook.createdDate(),
+                    existingBook.lastModifiedDate(),
+                    existingBook.createdBy(),
+                    existingBook.lastModifiedBy(),
+                    existingBook.version());
             return bookRepository.save(newBook);
         };
 
