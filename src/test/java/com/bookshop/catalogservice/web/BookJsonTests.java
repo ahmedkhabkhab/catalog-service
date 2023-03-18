@@ -52,7 +52,7 @@ class BookJsonTests {
       {
         "id": 394,
         "isbn": "1234567890",
-        title": "Title",
+        "title": "Title",
         "author": "Author",
         "price": 9.90,
         "publisher": "Polarsophia",
