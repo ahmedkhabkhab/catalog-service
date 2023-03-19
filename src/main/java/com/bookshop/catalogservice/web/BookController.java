@@ -2,6 +2,8 @@ package com.bookshop.catalogservice.web;
 
 import com.bookshop.catalogservice.domain.Book;
 import com.bookshop.catalogservice.domain.BookService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +13,8 @@ import javax.validation.Valid;
 @RequestMapping("books")
 public class BookController {
 
+    private static final Logger log = LoggerFactory.getLogger(BookController.class);
+
     private final BookService bookService;
 
     public BookController(BookService bookService) {
@@ -19,6 +23,7 @@ public class BookController {
 
     @GetMapping
     public Iterable<Book> get() {
+        log.info("Fetching the list of books in the catalog");
         return bookService.viewBookList();
     }
 
