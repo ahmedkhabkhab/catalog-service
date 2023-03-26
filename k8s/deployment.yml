@@ -33,3 +33,15 @@ spec:
               value: testdata
             - name: SPRING_CLOUD_CONFIG_URI
               value: http://config-service
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: 9001
+            initialDelaySeconds: 10
+            periodSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: 9001
+            initalDelaySeconds: 5
+            periodSeconds: 15
