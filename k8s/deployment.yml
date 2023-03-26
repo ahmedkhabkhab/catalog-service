@@ -43,5 +43,5 @@ spec:
             httpGet:
               path: /actuator/health/readiness
               port: 9001
-            initalDelaySeconds: 5
+            initialDelaySeconds: 5
             periodSeconds: 15
