@@ -18,6 +18,7 @@ public class SecurityConfig {
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http
                 .authorizeHttpRequests(authorize -> authorize
+                        .mvcMatchers("/actuator/**").permitAll() // Allow unauthenticated access to Actuator endpoints
                         .mvcMatchers(HttpMethod.GET, "/", "/books/**")
                         .permitAll() // Allow fetching books (GET) without authentication
                         .anyRequest().hasRole("employee"))// Any other request should be authenticated
