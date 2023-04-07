@@ -41,7 +41,10 @@ management:
   endpoints:
     web:
       exposure:
-        include: flyway, health, metrics, prometheus
+        include: flyway, health, metrics, prometheus, info
+  info:
+    env:
+      enabled: true
   endpoint:
     health:
       show-details: always
@@ -55,3 +58,6 @@ management:
 logging:
   pattern:
     level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
+
+info:
+  system: Polar Bookshop

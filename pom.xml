@@ -167,6 +167,11 @@
 							<goal>build-image</goal>
 						</goals>
 					</execution>
+					<execution>
+						<goals>
+							<goal>build-info</goal>
+						</goals>
+					</execution>
 				</executions>
 				<configuration>
 					<environmentVariables><BP_JVM_VERSION>17.*</BP_JVM_VERSION></environmentVariables>
@@ -181,5 +186,6 @@
 			</plugin>
 		</plugins>
 	</build>
+
 
 </project>
