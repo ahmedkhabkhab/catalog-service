@@ -41,7 +41,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: flyway, health, metrics, prometheus, info
+        include: flyway, health, heapdump, metrics, prometheus, info
   info:
     env:
       enabled: true
