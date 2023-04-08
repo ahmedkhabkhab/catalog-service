@@ -14,13 +14,13 @@ spring:
     name: catalog-service
   config:
     import: ""
-    cloud:
-      config:
-        enabled: false
-        uri: http://localhost:8888
-        request-connect-timeout: 5000
-        request-read-timeout: 5000
-        fail-fast: false
+  cloud:
+    config:
+      enabled: false
+      uri: http://localhost:8888
+      request-connect-timeout: 5000
+      request-read-timeout: 5000
+      fail-fast: false
       retry:
         max-attempts: 6
         multiplier: 1.1
