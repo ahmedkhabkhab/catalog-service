@@ -37,6 +37,9 @@ spec:
               value: testdata
             - name: SPRING_CLOUD_CONFIG_URI
               value: http://config-service
+          volumeMounts:
+            - name: catalog-config-volume
+              mountPath: /workspace/config
           livenessProbe:
             httpGet:
               path: /actuator/health/liveness
@@ -49,3 +52,7 @@ spec:
               port: 9001
             initialDelaySeconds: 5
             periodSeconds: 15
+      volumes:
+        - name: catalog-config-volume
+          configMap:
+            name: catalog-config
